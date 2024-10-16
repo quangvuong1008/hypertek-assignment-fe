@@ -8,7 +8,7 @@ const CollectButton = ({ fromAddress, toAddress, setRefreshTrigger }) => {
   const collectUSDC = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:3000/api/collectUSDC", {
+      const response = await axios.post("https://hypertek-assignment-be.onrender.com/api/collectUSDC", {
         fromAddress
       });
       setLoading(false);
@@ -49,8 +49,6 @@ const CollectButton = ({ fromAddress, toAddress, setRefreshTrigger }) => {
       {loading ? "Loading..." : "Collect USDC"}
     </button>
   );
-
-  return <button onClick={collectUSDC} disabled={loading}>{loading ? "Loading..." : "Collect USDC"}</button>;
 };
 
 export default CollectButton;

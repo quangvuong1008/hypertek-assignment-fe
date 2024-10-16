@@ -8,7 +8,7 @@ const BurnButton = ({ fromAddress, toAddress, setRefreshTrigger }) => {
   const burnUSDC = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:3000/api/burnUSDC", {
+      const response = await axios.post("https://hypertek-assignment-be.onrender.com/api/burnUSDC", {
         fromAddress,
         toAddress,
       });
@@ -51,8 +51,6 @@ const BurnButton = ({ fromAddress, toAddress, setRefreshTrigger }) => {
       {loading ? "Loading..." : "Burn USDC"}
     </button>
   );
-
-  return <button onClick={burnUSDC} disabled={loading}>{loading ? "Loading..." : "Burn USDC"}</button>;
 };
 
 export default BurnButton;
