@@ -15,7 +15,7 @@ function App() {
   const createWallet = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("https://hypertek-assignment-be.onrender.com/api/createNewWallet");
+      const response = await axios.post("http://localhost:3000/api/createNewWallet");
       enqueueSnackbar("New Wallet: " + response.data.walletAddress, { variant: 'success' });
       setNewWallet(response.data.walletAddress);
       setLoading(false);
@@ -33,7 +33,7 @@ function App() {
     setNewWallet(null);
     setLoading(true);
     try {
-      const response = await axios.post("https://hypertek-assignment-be.onrender.com/api/createNewWallet");
+      const response = await axios.post("http://localhost:3000/api/createNewWallet");
       enqueueSnackbar("New Wallet: " + response.data.walletAddress, { variant: 'success' });
       setNewWallet(response.data.walletAddress);
       setLoading(false);
@@ -50,7 +50,7 @@ function App() {
   useEffect(() => {
     const fetchTreasuryWallet = async () => {
       try {
-        const response = await axios.get("https://hypertek-assignment-be.onrender.com/api/getTreasuryWallet");
+        const response = await axios.get("http://localhost:3000/api/getTreasuryWallet");
         setTreasuryWallet(response.data.walletAddress);
       } catch (error) {
         console.error("Error fetching treasury wallet:", error);

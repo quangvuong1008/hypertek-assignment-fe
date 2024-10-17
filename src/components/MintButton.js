@@ -14,7 +14,7 @@ const MintButton = ({ walletAddress, setRefreshTrigger }) => {
       return;
     }
     try {
-      const response = await axios.post("https://hypertek-assignment-be.onrender.com/api/mintUSDC", {
+      const response = await axios.post("http://localhost:3000/api/mintUSDC", {
         amount: amount, // Example amount of 100 USDC
         walletAddress,
       });
